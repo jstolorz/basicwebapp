@@ -6,9 +6,10 @@ public class Customer {
 
     private String firstName;
 
+    @NotNull(message = "lastName is required")
     @Min(value = 0, message = "must be greater than or equal to zero")
     @Max(value = 10,message = "must be less than or equal to 10")
-    private int freePasses;
+    private Integer freePasses;
 
     @NotNull(message = "lastName is required")
     @Size(min = 1, message = "size is required")
@@ -33,11 +34,11 @@ public class Customer {
         this.lastName = lastName;
     }
 
-    public int getFreePasses() {
+    public Integer getFreePasses() {
         return freePasses;
     }
 
-    public void setFreePasses(int freePasses) {
+    public void setFreePasses(Integer freePasses) {
         this.freePasses = freePasses;
     }
 
