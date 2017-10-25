@@ -1,5 +1,7 @@
 package com.reddragon.jstolorz.com.reddragon.jstolorz.entity;
 
+import com.reddragon.jstolorz.com.reddragon.jstolorz.validation.CourseCode;
+
 import javax.validation.constraints.*;
 
 public class Customer {
@@ -17,6 +19,17 @@ public class Customer {
 
     @Pattern(regexp = "[0-9]{2}-[0-9]{3}",message = "format 00-000")
     private String postalCode;
+
+    @CourseCode(value = "LOL", message = "must start with LOL")
+    private String courseCode;
+
+    public String getCourseCode() {
+        return courseCode;
+    }
+
+    public void setCourseCode(String courseCode) {
+        this.courseCode = courseCode;
+    }
 
     public String getFirstName() {
         return firstName;
